@@ -1,0 +1,134 @@
+.header
+	position: fixed
+	z-index: 999
+	left: 0
+	top: 0
+	+size(100%,80px)
+	background-color: $c-green
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	h1
+		color: $c-white
+		margin-left: 20px
+		+bp(max, 480px)
+			font-size: 48px
+			font-family: bold
+			span
+				display: none
+
+	.h-con
+		transition: all 1s ease
+		height: 80px
+		.h-del,.h-edi,.h-new,.h-welcome
+			display: inline-block
+			color: $c-white
+			height: 80px
+			line-height: 80px
+			cursor: pointer
+			padding: 0 20px
+			&:hover
+				background-color: shade($c-green,10%)
+			i
+				margin-right: 10px
+		.h-welcome
+			display: none
+		.h-item:not(:last-child)
+			margin-right: 30px
+		+bp(max, 1280px)
+			.h-welcome
+				display: inline-block
+			.h-item:not(:last-child)
+				margin-right: 0
+		+bp(max, 1002px)
+			display: flex
+			flex-direction: column
+			transform: translateY(-320px)
+			.h-item
+				background-color: $c-green
+				+size(180px,80px)
+				line-height: 80px
+				text-align: center
+				padding: 0
+			.h-welcome
+				order: 1
+			.h-del
+				order: 2
+			.h-edi
+				order: 3
+			.h-new
+				order: 4
+
+	.welcome
+		cursor: pointer
+		margin-right: 80px
+		height: 80px
+		line-height: 80px
+		padding: 0 20px
+		&:hover
+			background-color: shade($c-green,10%)
+		color: $c-white
+		i
+			margin-right: 10px
+			font-size: 1.5em
+		+bp(max, 1280px)
+			display: none
+
+	.menu-btn
+		cursor: pointer
+		position: fixed
+		right: 0
+		top: 0
+		+size(180px,80px)
+		display: none
+		transition: all 0.6s ease
+		+bp(max, 1002px)
+			display: block
+		.btn-box
+			position: absolute
+			+size(80px)
+			right: 50px
+			+bp(max, 480px)
+				right: 20px
+			span
+				+centerer
+				+size(50px,4px)
+				background-color: $c-white
+				&:before,&:after
+					position: absolute
+					content:""
+					+size(50px,4px)
+					background-color: $c-white
+					left: 0
+					transition: all 0.6s ease
+				&:before
+					top: 14px
+				&:after
+					top: -14px
+
+	.menu-btn.active
+		right: 130px
+		+bp(max, 768px)
+			right: 0
+		transform: rotate(-90deg)
+		.btn-box
+			+bp(max, 480px)
+				right: 50px
+			span
+				&:before
+					width: 25px
+					left: 30px
+					top: 8px
+					transform: rotate(-45deg)
+				&:after
+					width: 25px
+					left: 30px
+					top: -8px
+					transform: rotate(45deg)
+
+.h-con.active
+	transform: translateY(0px)
+	+bp(max, 768px)
+		transform: translateY(80px)
+
