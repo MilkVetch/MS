@@ -1,9 +1,14 @@
 $('.btn-box').click(function() {
 	$('.menu-btn').toggleClass('active');
-	$('.h-con').toggleClass('active');
+	$('.welcome-nav').toggleClass('active');
 });
 
-$('.h-item').click(function() {
+$('.welcome-nav li').click(function() {
 	$('.menu-btn').toggleClass('active');
-	$('.h-con').toggleClass('active');
+	$('.welcome-nav').toggleClass('active');
+});
+
+$('.project').click(function() {
+	$(this).toggleClass('active');
+	$('.aside').toggleClass('active');
 });

@@ -1,0 +1,27 @@
+.main
+	background-color: pink
+	margin-top: 81px
+	margin-left: 200px
+	padding: 1em
+	+bp(max, 768px)
+		margin-left: 0
+
+	.project
+		cursor: pointer
+		+size(60px)
+		line-height: 60px
+		background-color: $c-green
+		border-radius: 50%
+		position: fixed
+		left: 20px
+		bottom: 20px
+		text-align: center
+		color: $c-white
+		transition: all 0.6s ease
+		display: none
+		+bp(max, 768px)
+			display: block
+	.project.active
+		transform: rotate(180deg)
+		left: 220px
+
