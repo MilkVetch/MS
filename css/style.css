@@ -431,6 +431,7 @@ html {
 }
 
 .main .project {
+  z-index: 50;
   cursor: pointer;
   width: 60px;
   height: 60px;
@@ -759,4 +760,305 @@ html {
   .main .inner-wrapper .inner-header .qrc:after {
     content: "";
   }
+}
+
+.main .inner-wrapper h1 {
+  border-top: 1px solid #0a0f51;
+  margin-top: 50px;
+  padding-top: 10px;
+  font-family: Microsoft YaHei;
+  text-align: center;
+  color: #0a0f51;
+  position: relative;
+}
+
+@media screen and (max-width: 480px) {
+  .main .inner-wrapper h1 {
+    font-size: 1.5em;
+  }
+}
+
+.main .inner-wrapper h1:after {
+  cursor: pointer;
+  position: absolute;
+  content: "";
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: -40px;
+  width: 0px;
+  height: 0px;
+  border: 20px solid transparent;
+  border-bottom: 20px solid #0a0f51;
+}
+
+.main .inner-wrapper .show {
+  width: 100%;
+  height: 400px;
+  z-index: -10;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.main .inner-wrapper .show .tank {
+  margin-top: 30px;
+  width: 190px;
+  height: 275px;
+  background-color: #E0E0E0;
+  position: relative;
+}
+
+.main .inner-wrapper .show .tank:after, .main .inner-wrapper .show .tank:before {
+  z-index: 0;
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 190px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+}
+
+.main .inner-wrapper .show .tank:before {
+  top: -30px;
+}
+
+.main .inner-wrapper .show .tank:after {
+  bottom: -30px;
+}
+
+.main .inner-wrapper .show .tank .measure1 {
+  position: absolute;
+  top: 2.5px;
+  left: 20px;
+  width: 65px;
+  height: 270px;
+  background-color: #959595;
+}
+
+.main .inner-wrapper .show .tank .measure1 .liquid-height {
+  z-index: 4;
+  width: 100%;
+  height: 60px;
+  background-color: #4BFFFE;
+  position: absolute;
+  bottom: 0;
+}
+
+.main .inner-wrapper .show .tank .measure1 ul {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  list-style: none;
+  padding: 0;
+}
+
+.main .inner-wrapper .show .tank .measure1 ul li {
+  width: 6px;
+  height: 1px;
+  background-color: #FAFBFD;
+}
+
+.main .inner-wrapper .show .tank .measure1 ul li:not(:last-child) {
+  margin-bottom: 23px;
+}
+
+.main .inner-wrapper .show .tank .measure1 ul li:nth-child(1), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(6), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(11) {
+  width: 12px;
+}
+
+.main .inner-wrapper .show .tank .measure1 ul li:nth-child(2), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(3), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(4), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(5), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(7), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(8), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(9), .main .inner-wrapper .show .tank .measure1 ul li:nth-child(10) {
+  margin-left: 6px;
+}
+
+.main .inner-wrapper .show .tank .measure1 ul li:nth-child(1):after {
+  content: "100";
+  position: absolute;
+  right: 20px;
+  margin-top: -8px;
+}
+
+.main .inner-wrapper .show .tank .measure1 ul li:nth-child(6):after {
+  content: "50";
+  position: absolute;
+  right: 20px;
+  margin-top: -8px;
+}
+
+.main .inner-wrapper .show .tank .measure1 ul li:nth-child(11):after {
+  content: "0";
+  position: absolute;
+  right: 20px;
+  margin-top: -8px;
+}
+
+.main .inner-wrapper .show .tank .measure2 {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background-color: #959595;
+  top: 2.5px;
+  left: 105px;
+}
+
+.main .inner-wrapper .show .tank .measure2 .measure-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.main .inner-wrapper .show .tank .bar1 {
+  position: absolute;
+  left: 230px;
+  top: 26px;
+  width: 388px;
+  height: 18px;
+  background: #426390;
+  background: linear-gradient(#426390 44%, #174073 56%);
+}
+
+.main .inner-wrapper .show .tank .bar1 span {
+  position: absolute;
+  top: -35px;
+  right: 50px;
+}
+
+.main .inner-wrapper .show .tank .bar2 {
+  position: absolute;
+  left: 190px;
+  top: 213px;
+  width: 428px;
+  height: 18px;
+  background: #7b7c7e;
+  background: linear-gradient(#7b7c7e 44%, #57585a 56%);
+}
+
+.main .inner-wrapper .show .tank .bar1:after, .main .inner-wrapper .show .tank .bar2:after {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 30px;
+  background: linear-gradient(black, white, black);
+  border: 1px solid #FAFBFD;
+  right: -6px;
+  top: -7px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate {
+  position: absolute;
+  left: 265px;
+  top: 44px;
+  z-index: 5;
+  width: 312px;
+  height: 169px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul {
+  position: absolute;
+  top: 0;
+  list-style: none;
+  margin-left: 24px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li {
+  display: inline-block;
+  width: 10px;
+  height: 169px;
+  background: gray;
+  background: linear-gradient(90deg, black, white, black);
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li:not(:last-child) {
+  margin-right: 72px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li:after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 5px;
+  bottom: 3px;
+  margin-left: -5px;
+  background-color: black;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li:nth-child(1):before {
+  content: "#1";
+  position: absolute;
+  bottom: -40px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li:nth-child(2):before {
+  content: "#2";
+  position: absolute;
+  bottom: -40px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li:nth-child(3):before {
+  content: "#3";
+  position: absolute;
+  bottom: -40px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll-shape {
+  width: 58px;
+  margin-left: -24px;
+  background: gray;
+  background: linear-gradient(90deg, black, white, black);
+  position: relative;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll-shape:after, .main .inner-wrapper .show .tank .roll-plate ul li .roll-shape:before {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 58px;
+  height: 16px;
+  background: gray;
+  background: linear-gradient(90deg, black, white, black);
+  border-radius: 50%;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll-shape:after {
+  top: -8px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll-shape:before {
+  bottom: -8px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll-shape .black-bar-plate {
+  position: absolute;
+  z-index: 10;
+  top: 3px;
+  width: 42px;
+  height: calc(100% - 6px);
+  margin-left: 8px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll-shape .black-bar-plate span {
+  display: inline-block;
+  width: 6px;
+  height: 100%;
+  background-color: black;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll-shape .black-bar-plate span:not(:last-child) {
+  margin-right: 6px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll1, .main .inner-wrapper .show .tank .roll-plate ul li .roll2, .main .inner-wrapper .show .tank .roll-plate ul li .roll3 {
+  height: 65px;
+  margin-top: 47px;
+}
+
+.main .inner-wrapper .show .tank .roll-plate ul li .roll4 {
+  height: 55px;
+  margin-top: 66px;
 }

@@ -12,3 +12,7 @@ $('.project').click(function() {
 	$(this).toggleClass('active');
 	$('.aside').toggleClass('active');
 });
+
+$('.inner-wrapper h1').click(function() {
+	$('.inner-header').slideToggle();
+});
