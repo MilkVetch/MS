@@ -1,8 +1,6 @@
 .main
-	background-color: pink
 	margin-top: 81px
 	margin-left: 200px
-	padding: 1em
 	+bp(max, 768px)
 		margin-left: 0
 
@@ -24,4 +22,96 @@
 	.project.active
 		transform: rotate(180deg)
 		left: 220px
+
+	.main-top-bar
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+		+bp(max, 600px)
+			display: block
+			.bar-sm
+				+clearfix
+				display: block
+				border-bottom: 1px solid $c-dgray
+				.bar-sm-btn
+					cursor: pointer
+					background-color: shade($c-lgray,10%)
+					&:hover
+						background-color: orange
+						color: $c-white
+					&:not(:last-child)
+						border-right: 1px solid $c-dgray
+					&:last-child
+						width: 20%
+					text-align: center
+					line-height: 40px
+					float: left
+					width: calc(20% - 1px)
+					height: 40px
+					font-size: 1.2em
+				.bar-sm-menu
+					position: relative
+					&:hover
+						ul
+							height: 163px
+					ul
+						height: 0
+						overflow: hidden
+						transition: all 0.6s ease
+						position: absolute
+						left: 0
+						top: 22px
+						list-style: none
+						padding: 0
+						width: 100%
+						li
+							background-color: shade($c-lgray,10%)
+							&:hover
+								background-color: shade($c-lgray,20%)
+								color: $c-white
+							&:not(:last-child)
+								border-bottom: 1px solid $c-dgray
+							color: black
+
+			.bar-title
+				text-align: center
+				padding: 10px
+			.bar-btn
+				display: none
+			.bar-lock
+				display: none
+
+
+		background-color: $c-lgray
+		.bar-sm
+			display: none
+			+bp(max, 600px)
+				display: block
+		.bar-btn
+			order: 1
+			+bp(max, 768px)
+				.bar-click
+					&:first-child
+						padding-left: 20px
+			.bar-click
+				display: inline-block
+				cursor: pointer
+				padding: 15px 10px
+			.bar-ico
+				background-color: shade($c-lgray,10%)
+				border-right: 1px solid $c-dgray
+				&:hover
+					background-color: orange
+			.bar-ico
+				i
+					margin: 0 5px
+
+		.bar-title
+			font-weight: bold
+			order: 2
+
+		.bar-lock
+			margin-right: 20px
+			order: 3
 
