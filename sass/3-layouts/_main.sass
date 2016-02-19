@@ -52,6 +52,7 @@
 					font-size: 1.2em
 				.bar-sm-menu
 					position: relative
+					z-index: 5
 					&:hover
 						ul
 							height: 163px
@@ -114,4 +115,92 @@
 		.bar-lock
 			margin-right: 20px
 			order: 3
+
+	.inner-wrapper
+		width: 85%
+		margin: 0 auto
+		// background-color: pink
+
+		.inner-header
+			margin-top: 20px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			+bp(max, 1002px)
+				flex-direction: column
+				.company
+					order: 1
+				.double-btn
+					order: 3
+				.qrc
+					order: 2
+
+			.company
+				+size(355px,54px)
+				+bp(max, 480px)
+					width: 100%
+				background-image: url("../img/logo.jpg")
+				background-size: 100% 100%
+			.double-btn
+				display: flex
+				flex-direction: row
+				+bp(max, 270px)
+					flex-direction: column
+					.h-btn
+						&:first-child
+							margin-bottom: 10px
+
+				.h-btn
+					+size(92px,35px)
+					background: rgb(10,15,81)
+					background: -webkit-linear-gradient(rgb(22,65,118) 44%, rgb(10,15,81) 56%)
+					background: -moz-linear-gradient(rgb(22,65,118) 44%, rgb(10,15,81) 56%)
+					background: -o-linear-gradient(rgb(22,65,118) 44%, rgb(10,15,81) 56%)
+					background: linear-gradient(rgb(22,65,118) 44%, rgb(10,15,81) 56%)
+					border-radius: 5px
+					border: none
+					color: $c-white
+					&:first-child
+						margin-right: 20px
+						+bp(max, 270px)
+							margin-right: 0
+
+			.qrc
+				+size(75px)
+				line-height: 75px
+				background-image: url("../img/qrc.jpg")
+				text-align: center
+				span
+					display: none
+					position: relative
+					.qrc-hide
+						position: absolute
+						+centerer
+						+size(0px)
+						transition: all 1s ease
+						background-image: url("../img/qrc.jpg")
+						background-size: 100% 100%
+				+bp(max, 1002px)
+					width: 100%
+					background-image: none
+					span
+						display: block
+						cursor: pointer
+						&:hover
+							color: red
+							.qrc-hide
+								+size(200px)
+
+				background-size: 100% 100%
+				position: relative
+				&:after
+					position: absolute
+					content: "手机扫码体验"
+					+bp(max, 1002px)
+						content: ""
+					top: 50px
+					left: 2px
+					font-size: 10px
+
+
 

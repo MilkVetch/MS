@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   background-color: #959595;
 }
@@ -311,6 +312,7 @@ html {
   height: calc(100% - 80px);
   background-color: #FAFBFD;
   position: fixed;
+  z-index: 50;
   top: 80px;
   left: 0;
   overflow-x: hidden;
@@ -509,6 +511,7 @@ html {
   }
   .main .main-top-bar .bar-sm .bar-sm-menu {
     position: relative;
+    z-index: 5;
   }
   .main .main-top-bar .bar-sm .bar-sm-menu:hover ul {
     height: 163px;
@@ -600,4 +603,160 @@ html {
   -webkit-order: 3;
       -ms-flex-order: 3;
           order: 3;
+}
+
+.main .inner-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.main .inner-wrapper .inner-header {
+  margin-top: 20px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 1002px) {
+  .main .inner-wrapper .inner-header {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main .inner-wrapper .inner-header .company {
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .main .inner-wrapper .inner-header .double-btn {
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .main .inner-wrapper .inner-header .qrc {
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+.main .inner-wrapper .inner-header .company {
+  width: 355px;
+  height: 54px;
+  background-image: url("../img/logo.jpg");
+  background-size: 100% 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .main .inner-wrapper .inner-header .company {
+    width: 100%;
+  }
+}
+
+.main .inner-wrapper .inner-header .double-btn {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media screen and (max-width: 270px) {
+  .main .inner-wrapper .inner-header .double-btn {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main .inner-wrapper .inner-header .double-btn .h-btn:first-child {
+    margin-bottom: 10px;
+  }
+}
+
+.main .inner-wrapper .inner-header .double-btn .h-btn {
+  width: 92px;
+  height: 35px;
+  background: #0a0f51;
+  background: linear-gradient(#164176 44%, #0a0f51 56%);
+  border-radius: 5px;
+  border: none;
+  color: #FAFBFD;
+}
+
+.main .inner-wrapper .inner-header .double-btn .h-btn:first-child {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 270px) {
+  .main .inner-wrapper .inner-header .double-btn .h-btn:first-child {
+    margin-right: 0;
+  }
+}
+
+.main .inner-wrapper .inner-header .qrc {
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  background-image: url("../img/qrc.jpg");
+  text-align: center;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.main .inner-wrapper .inner-header .qrc span {
+  display: none;
+  position: relative;
+}
+
+.main .inner-wrapper .inner-header .qrc span .qrc-hide {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 0px;
+  height: 0px;
+  transition: all 1s ease;
+  background-image: url("../img/qrc.jpg");
+  background-size: 100% 100%;
+}
+
+@media screen and (max-width: 1002px) {
+  .main .inner-wrapper .inner-header .qrc {
+    width: 100%;
+    background-image: none;
+  }
+  .main .inner-wrapper .inner-header .qrc span {
+    display: block;
+    cursor: pointer;
+  }
+  .main .inner-wrapper .inner-header .qrc span:hover {
+    color: red;
+  }
+  .main .inner-wrapper .inner-header .qrc span:hover .qrc-hide {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.main .inner-wrapper .inner-header .qrc:after {
+  position: absolute;
+  content: "手机扫码体验";
+  top: 50px;
+  left: 2px;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 1002px) {
+  .main .inner-wrapper .inner-header .qrc:after {
+    content: "";
+  }
 }
