@@ -223,215 +223,278 @@
 				border: 20px solid transparent
 				border-bottom: 20px solid rgb(10,15,81)
 
-		.show
+		.show-outer
 			+size(100%,400px)
-			z-index: -10
-			overflow-x: scroll
-			overflow-y: hidden
-			// &::-webkit-scrollbar
-		 //    display: none
+			position: relative
+			+bp(max, 950px)
+				overflow-x: scroll
+				overflow-y: hidden
+				&::-webkit-scrollbar
+			    height: 8px
+				&::-webkit-scrollbar-track
+			    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+			    -webkit-border-radius: 4px
+			    border-radius: 4px
+				&::-webkit-scrollbar-thumb
+			    -webkit-border-radius: 4px
+			    border-radius: 4px
+			    background: rgba(66,99,144,0.8)
+			    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
+				&::-webkit-scrollbar-thumb:window-inactive
+					background: rgba(255,0,0,0.4)
 
-			.tank
-				margin-top: 30px
-				+size(190px, 275px)
-				background-color: $c-lgray
-				position: relative
-				&:after,&:before
-					z-index: 0
-					position: absolute
-					content: ""
+			.show
+				position: absolute
+				+size(630px,400px)
+				z-index: 0
+				left: 50%
+				transform: translateX(-50%)
+				// background-color: orange
+				+bp(max, 950px)
 					left: 0
-					+size(190px, 60px)
-					border-radius: 50%
+					transform: translateX(0)
+
+				.tank
+					margin-top: 30px
+					+size(190px, 275px)
 					background-color: $c-lgray
-				&:before
-					top: -30px
-				&:after
-					bottom: -30px
-
-				.measure1
-					position: absolute
-					top: 2.5px
-					left: 20px
-					+size(65px, 270px)
-					background-color: $c-dgray
-
-					.liquid-height
-						z-index: 4
-						+size(100%,60px)
-						background-color: #4BFFFE
+					position: relative
+					&:after,&:before
+						z-index: 0
 						position: absolute
-						bottom: 0
+						content: ""
+						left: 0
+						+size(190px, 60px)
+						border-radius: 50%
+						background-color: $c-lgray
+					&:before
+						top: -30px
+					&:after
+						bottom: -30px
 
-					ul
+					.measure1
 						position: absolute
-						right: 0
+						top: 2.5px
+						left: 20px
+						+size(65px, 270px)
+						background-color: $c-dgray
+
+						.liquid-height
+							z-index: 4
+							+size(100%,60px)
+							background-color: #4BFFFE
+							position: absolute
+							bottom: 0
+
+						ul
+							position: absolute
+							right: 0
+							z-index: 5
+							list-style: none
+							padding:0
+
+							li
+								+size(6px,1px)
+								background-color: $c-white
+								&:not(:last-child)
+									margin-bottom: 23px
+								&:nth-child(1),&:nth-child(6),&:nth-child(11)
+									width: 12px
+								&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(7),&:nth-child(8),&:nth-child(9),&:nth-child(10)
+									margin-left: 6px
+								&:nth-child(1)
+									&:after
+										content: "100"
+										position: absolute
+										right: 20px
+										margin-top: -8px
+								&:nth-child(6)
+									&:after
+										content: "50"
+										position: absolute
+										right: 20px
+										margin-top: -8px
+								&:nth-child(11)
+									&:after
+										content: "0"
+										position: absolute
+										right: 20px
+										margin-top: -8px
+
+					.measure2
+						position: absolute
+						+size(65px)
+						background-color: $c-dgray
+						top: 2.5px
+						left: 105px
+						.measure-number
+							+centerer
+
+					.bar1
+						position: absolute
+						left: 230px
+						top: 26px
+						+size(388px,18px)
+						background: rgb(66,99,144)
+						background: -webkit-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
+						background: -moz-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
+						background: -o-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
+						background: linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
+						span
+							position: absolute
+							top: -35px
+							right: 50px
+
+					.bar2
+						position: absolute
+						left: 190px
+						top: 213px
+						+size(428px,18px)
+						background: rgb(123,124,126)
+						background: -webkit-linear-gradient(rgb(123,124,126) 44%, rgb(87,88,90) 56%)
+						background: -moz-linear-gradient(rgb(123,124,126) 44%, rgb(87,88,90) 56%)
+						background: -o-linear-gradient(rgb(123,124,126) 44%, rgb(87,88,90) 56%)
+						background: linear-gradient(rgb(123,124,126) 44%, rgb(87,88,90) 56%)
+
+					.bar1:after,.bar2:after
+						position: absolute
+						content: ""
+						+size(4px, 30px)
+						background: linear-gradient(black,white,black)
+						border: 1px solid $c-white
+						right: -6px
+						top: -7px
+
+					.roll-plate
+						position: absolute
+						left: 265px
+						top: 44px
 						z-index: 5
-						list-style: none
-						padding:0
+						+size(312px, 169px)
+						// background-color: orange
 
-						li
-							+size(6px,1px)
-							background-color: $c-white
-							&:not(:last-child)
-								margin-bottom: 23px
-							&:nth-child(1),&:nth-child(6),&:nth-child(11)
-								width: 12px
-							&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(7),&:nth-child(8),&:nth-child(9),&:nth-child(10)
-								margin-left: 6px
-							&:nth-child(1)
-								&:after
-									content: "100"
-									position: absolute
-									right: 20px
-									margin-top: -8px
-							&:nth-child(6)
-								&:after
-									content: "50"
-									position: absolute
-									right: 20px
-									margin-top: -8px
-							&:nth-child(11)
-								&:after
-									content: "0"
-									position: absolute
-									right: 20px
-									margin-top: -8px
-
-				.measure2
-					position: absolute
-					+size(65px)
-					background-color: $c-dgray
-					top: 2.5px
-					left: 105px
-					.measure-number
-						+centerer
-
-				.bar1
-					position: absolute
-					left: 230px
-					top: 26px
-					+size(388px,18px)
-					background: rgb(66,99,144)
-					background: -webkit-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
-					background: -moz-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
-					background: -o-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
-					background: linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
-					span
-						position: absolute
-						top: -35px
-						right: 50px
-
-				.bar2
-					position: absolute
-					left: 190px
-					top: 213px
-					+size(428px,18px)
-					background: rgb(123,124,126)
-					background: -webkit-linear-gradient(rgb(123,124,126) 44%, rgb(87,88,90) 56%)
-					background: -moz-linear-gradient(rgb(123,124,126) 44%, rgb(87,88,90) 56%)
-					background: -o-linear-gradient(rgb(123,124,126) 44%, rgb(87,88,90) 56%)
-					background: linear-gradient(rgb(123,124,126) 44%, rgb(87,88,90) 56%)
-
-				.bar1:after,.bar2:after
-					position: absolute
-					content: ""
-					+size(4px, 30px)
-					background: linear-gradient(black,white,black)
-					border: 1px solid $c-white
-					right: -6px
-					top: -7px
-
-				.roll-plate
-					position: absolute
-					left: 265px
-					top: 44px
-					z-index: 5
-					+size(312px, 169px)
-					// background-color: orange
-
-					ul
-						position: absolute
-						top: 0
-						list-style: none
-						margin-left: 24px
-						margin-top: 0
-						padding: 0
-						li
-							display: inline-block
-							+size(10px, 169px)
-							background: gray
-							background: -webkit-linear-gradient(90deg,black,white,black)
-							background: -moz-linear-gradient(90deg,black,white,black)
-							background: -o-linear-gradient(90deg,black,white,black)
-							background: linear-gradient(90deg,black,white,black)
-							&:not(:last-child)
-								margin-right: 72px
-							&:after
-								position: absolute
-								content: ""
-								+size(20px, 5px)
-								bottom: 3px
-								margin-left: -5px
-								background-color: black
-							&:nth-child(1)
-								&:before
-									content: "#1"
-									position: absolute
-									bottom: -40px
-							&:nth-child(2)
-								&:before
-									content: "#2"
-									position: absolute
-									bottom: -40px
-							&:nth-child(3)
-								&:before
-									content: "#3"
-									position: absolute
-									bottom: -40px
-							.roll-shape
-								width: 58px
-								margin-left: -24px
+						ul
+							position: absolute
+							top: 0
+							list-style: none
+							margin-left: 24px
+							margin-top: 0
+							padding: 0
+							li
+								display: inline-block
+								+size(10px, 169px)
 								background: gray
 								background: -webkit-linear-gradient(90deg,black,white,black)
 								background: -moz-linear-gradient(90deg,black,white,black)
 								background: -o-linear-gradient(90deg,black,white,black)
 								background: linear-gradient(90deg,black,white,black)
-								position: relative
-								&:after,&:before
+								&:not(:last-child)
+									margin-right: 72px
+								&:after
 									position: absolute
-									left: 0
 									content: ""
-									+size(58px,16px)
+									+size(20px, 5px)
+									bottom: 3px
+									margin-left: -5px
+									background-color: black
+								&:nth-child(1)
+									&:before
+										content: "#1"
+										position: absolute
+										bottom: -40px
+								&:nth-child(2)
+									&:before
+										content: "#2"
+										position: absolute
+										bottom: -40px
+								&:nth-child(3)
+									&:before
+										content: "#3"
+										position: absolute
+										bottom: -40px
+								.roll-shape
+									width: 58px
+									margin-left: -24px
 									background: gray
 									background: -webkit-linear-gradient(90deg,black,white,black)
 									background: -moz-linear-gradient(90deg,black,white,black)
 									background: -o-linear-gradient(90deg,black,white,black)
 									background: linear-gradient(90deg,black,white,black)
-									border-radius: 50%
-								&:after
-									top: -8px
-								&:before
-									bottom: -8px
+									position: relative
+									&:after,&:before
+										position: absolute
+										left: 0
+										content: ""
+										+size(58px,16px)
+										background: gray
+										background: -webkit-linear-gradient(90deg,black,white,black)
+										background: -moz-linear-gradient(90deg,black,white,black)
+										background: -o-linear-gradient(90deg,black,white,black)
+										background: linear-gradient(90deg,black,white,black)
+										border-radius: 50%
+									&:after
+										top: -8px
+									&:before
+										bottom: -8px
 
-								.black-bar-plate
-									position: absolute
-									z-index: 10
-									top: 3px
-									+size(42px, calc(100% - 6px))
-									// background-color: orange
-									margin-left: 8px
-									span
-										display: inline-block
-										+size(6px, 100%)
-										background-color: black
-										&:not(:last-child)
-											margin-right: 6px
+									.black-bar-plate
+										position: absolute
+										z-index: 10
+										top: 3px
+										+size(42px, calc(100% - 6px))
+										margin-left: 8px
+										span
+											display: inline-block
+											+size(6px, 100%)
+											background-color: #002625
+											&:not(:last-child)
+												margin-right: 6px
 
-							.roll1,.roll2,.roll3
-								height: 65px
-								margin-top: 47px
-							.roll4
-								height: 55px
-								margin-top: 66px
+								.roll1,.roll2,.roll3
+									height: 65px
+									margin-top: 47px
+								.roll4
+									height: 55px
+									margin-top: 66px
 
+		.f-c
+			width: 100%
+			display: flex
+			+bp(max, 950px)
+				margin-top: 40px
+			.form
+				width: calc(100% - 200px)
+				display: flex
+				flex-direction: row
+				align-items: center
+				justify-content: space-around
+				+bp(max, 1002px)
+					flex-direction: column
+
+				.form-part
+					width: 100%
+					display: flex
+					font-size: 1.5em
+					line-height: 1.5em
+					justify-content: space-around
+					border-right: 1px solid #222
+					.c-1,.c-3
+						color: blue
+
+			.ctl
+				width: 200px
+				display: flex
+				flex-direction: column
+				align-items: center
+
+				button
+					+size(120px, 50px)
+					border: none
+					border-radius: 5px
+					background: rgb(66,99,144)
+					background: -webkit-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
+					background: -moz-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
+					background: -o-linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
+					background: linear-gradient(rgb(66,99,144) 44%, rgb(23,64,115) 56%)
+					margin-bottom: 20px
+					color: $c-white
